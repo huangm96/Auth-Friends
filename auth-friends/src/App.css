@@ -1,4 +1,8 @@
-.App {
+.App{
+  margin:50px 100px;
+}
+.AppHeaderContainer {
+  
   text-align: center;
 }
 
@@ -27,4 +31,12 @@ input{
 button{
   width:100px;
   margin: 10px auto;
+}
+.FriendsContainer{
+  margin: 10px 0;
+}
+.FriendContainer{
+  border: 1px solid black;
+  padding : 0 50px;
+  margin: 10px 0;
 }

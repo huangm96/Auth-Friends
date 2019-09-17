@@ -12,10 +12,11 @@ function App() {
     <Router>
       <div className="App">
         <AppHeader />
-      </div>
+      
       <Route exact path="/" render={() => <Redirect to="/login" />} />
       <Route path="/login" component={Login} />
-      <PrivateRoute exact path="/data" component={FriendsData} />
+        <PrivateRoute exact path="/data" component={FriendsData} />
+      </div>
     </Router>
   );
 }
