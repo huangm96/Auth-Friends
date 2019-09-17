@@ -2,3 +2,29 @@
   text-align: center;
 }
 
+
+form{
+  margin:50px auto;
+  width:300px;
+  display:flex;
+  flex-direction: column;
+  
+}
+.info-input{
+  margin: 10px 0;
+  display:flex;
+  flex-direction: column;
+}
+label{
+  margin: 0 0 5px 0;
+  font-Weight: bold;
+  font-size: 1.2rem;
+}
+input{
+  height: 30px;
+  font-size: 1.2rem;
+}
+button{
+  width:100px;
+  margin: 10px auto;
+}
