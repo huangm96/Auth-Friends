@@ -1,7 +1,8 @@
 import React, { useState} from "react";
-import { axiosWithAuth } from '../utils/axiosWithAuth'
+import { connect } from "react-redux";
+import { getLogin } from "../store/actions";
 
-function Login(props) {
+const Login=(props) =>{
 console.log(props)
     const [form, setForm] = useState({ username: "", password: '' })
     
@@ -11,16 +12,8 @@ console.log(props)
     };
     const handleSubmit = (e) => {
         e.preventDefault();
-        axiosWithAuth()
-            .post('/login',form)
-            .then(res => {
-              
-                localStorage.setItem("token", res.data.payload);
-                props.history.push("/data");
-            })
-            .catch(err => {
-            console.log(err)
-        })
+        props.getLogin(form,props);
+        
     }
   return (
     <div className="LoginContainer">
@@ -52,5 +45,16 @@ console.log(props)
   );
   
 }
+const mapStateToProps = state => {
+  console.log(state);
+  return {
+    friends: state.friends,
+    isFetching: state.isFetching
+  };
+};
 
-export default Login;
+export default connect(
+  mapStateToProps,
+  { getLogin }
+)(Login);
+

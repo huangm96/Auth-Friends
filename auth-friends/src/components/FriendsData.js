@@ -1,32 +1,43 @@
-import React,{useEffect,useState} from "react";
-import { axiosWithAuth } from "../utils/axiosWithAuth";
-import Friend from './Friend'
+import React, { useEffect, useState } from "react";
+import { connect } from "react-redux";
+import { getFriends } from "../store/actions";
+import Friend from "./Friend";
+import AddFriendFrom from "./AddFriendForm";
 
-const FriendsData=() =>{
-    const [friends, setFriends] = useState([])
-    console.log("friends: ", friends)
+const FriendsData = props => {
+ 
     useEffect(() => {
-        axiosWithAuth()
-            .get('./friends')
-            .then(res => {
-                console.log(res)
-                setFriends(...friends, res.data)
-                
-            })
-        .catch(err=>{console.log(err)})
-},[])
+      props.getFriends();
+    }, [getFriends]);
 
+   
   return (
-    <div className="FriendsDataContainer">
-      <h2>Friends List:</h2>
-      <div className="FriendsContainer">
-        {friends.map(f => {
-          return <Friend friend={f} />;
-        })}
+    <>
+      <AddFriendFrom />
+      <div className="FriendsDataContainer">
+        <h2>Friends List:</h2>
+        {props.isFetching ? (
+          <h2>Loading...</h2>
+        ) : (
+          <div className="FriendsContainer">
+            {props.friends.map(f => {
+              return <Friend friend={f} />;
+            })}
+          </div>
+        )}
       </div>
-    </div>
+    </>
   );
-  
-}
+};
+const mapStateToProps = state => {
+  console.log(state);
+  return {
+    friends: state.friends,
+    isFetching: state.isFetching
+  };
+};
 
-export default FriendsData;
+export default connect(
+  mapStateToProps,
+  { getFriends }
+)(FriendsData);
