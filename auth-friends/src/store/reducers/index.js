@@ -4,7 +4,8 @@ import {
   SAVING_FRIENDS,
   LOGIN_START,
   LOGIN_SUCCESS,
-  LOGIN_FAILURE
+  LOGIN_FAILURE,
+  DELETING_FRIENDS
 } from "../actions";
 const initialState = {
   isFetching: false,
@@ -35,7 +36,6 @@ export const reducer = (state = initialState, action) => {
         isFetching: true
       };
     case FETCHING_FRIENDS_SUCCESS:
-      
       return {
         ...state,
         friends: [...state.friends, action.payload],
@@ -46,6 +46,14 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         friends: [...state.friends, action.payload]
+      };
+    case DELETING_FRIENDS:
+      console.log(action.payload);
+      return {
+        ...state,
+        friends: state.friends.filter((f) => {
+          return f.id !== action.payload.id
+        })
       };
     default:
       return state;

@@ -51,3 +51,18 @@ export const saveFriends = friend => dispatch => {
       console.log(err);
     });
 };
+
+export const DELETING_FRIENDS = "DELETING_FRIENDS";
+
+export const deleteFriend = friend => dispatch => {
+
+axiosWithAuth()
+  .delete(`./friends/${friend.id}`)
+  .then(res => {
+    console.log(res);
+     dispatch({ type: DELETING_FRIENDS, payload: friend });
+  })
+  .catch(err => {
+    console.log(err);
+  });
+}

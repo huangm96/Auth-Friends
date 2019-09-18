@@ -37,7 +37,9 @@ const Login=(props) =>{
             value={form.password}
           />
         </div>
-        <button type="submit">Sign in</button>
+        <button className="form-button" type="submit">
+          Sign in
+        </button>
         {props.isLogined ? null : <span>Loading...</span>}
       </form>
       <div>

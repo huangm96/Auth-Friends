@@ -39,7 +39,7 @@ input{
   height: 30px;
   font-size: 1.2rem;
 }
-button{
+.form-button{
   width:100px;
   margin: 10px auto;
 }
@@ -49,10 +49,18 @@ button{
 .FriendsContainer{
   margin: 10px 0;
 }
+.delete-button {
+  height:30px;
+  width: 80px;
+  
+}
 .FriendContainer{
   border: 1px solid black;
   padding : 0 50px;
   margin: 10px 0;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .errorMessage-friendForm{
   margin: 15px 0;
