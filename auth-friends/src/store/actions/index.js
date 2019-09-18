@@ -12,7 +12,7 @@ export const getLogin = (info, props) => dispatch => {
       console.log(info);
       dispatch({ type: LOGIN_SUCCESS });
       localStorage.setItem("token", res.data.payload);
-      props.history.push("/data");
+      props.history.push("/data")
     })
     .catch(err => {
       console.log(err);

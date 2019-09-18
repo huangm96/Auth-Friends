@@ -18,7 +18,8 @@ export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case LOGIN_START:
       return {
-        ...state
+        ...state,
+        
       };
     case LOGIN_SUCCESS:
       return {
@@ -28,6 +29,7 @@ export const reducer = (state = initialState, action) => {
     case LOGIN_FAILURE:
       return {
         ...state,
+        
         signInErrorMessage: true
       };
     case FETCHING_FRIENDS_START:

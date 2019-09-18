@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { deleteFriend } from "../store/actions";
 
 const Friend=(props)=> {
-  console.log(props)
+  
   const removeFriend = () => {
     
      props.deleteFriend(props.friend);
