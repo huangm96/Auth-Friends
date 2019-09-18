@@ -55,6 +55,7 @@ button{
   margin: 10px 0;
 }
 .errorMessage-friendForm{
+  margin: 15px 0;
   text-align: center;
   font-Weight: bold;
   font-size: 1.5rem;

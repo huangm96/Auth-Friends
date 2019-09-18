@@ -21,7 +21,7 @@ const FriendsData = props => {
         ) : (
           <div className="FriendsContainer">
             {props.friends.map(f => {
-              return <Friend friend={f} />;
+                return <Friend key={f.id} friend={f} />;
             })}
           </div>
         )}
@@ -30,7 +30,7 @@ const FriendsData = props => {
   );
 };
 const mapStateToProps = state => {
-  console.log(state);
+  
   return {
     friends: state.friends,
     isFetching: state.isFetching
