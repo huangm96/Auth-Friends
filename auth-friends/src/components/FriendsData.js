@@ -6,9 +6,11 @@ import AddFriendFrom from "./AddFriendForm";
 
 const FriendsData = props => {
  
-    useEffect(() => {
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
       props.getFriends();
-    }, [getFriends]);
+    }
+    },[]);
 
    
   return (
