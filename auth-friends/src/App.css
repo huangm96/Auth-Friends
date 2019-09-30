@@ -1,0 +1,72 @@
+.App{
+  width:100%;
+}
+.AppHeaderContainer {
+  text-align: center;
+  
+}
+.Links-Container{
+  
+  display:flex;
+  justify-content: flex-end;
+  margin: 0 100px 0 0;
+  font-size: 1.5rem;
+  
+}
+.Links{
+  margin: 0 50px;
+  text-decoration: underline;
+  color: black;
+}
+form{
+  margin:10px auto;
+  width:300px;
+  display:flex;
+  flex-direction: column;
+  
+}
+.info-input{
+  margin: 10px 0;
+  display:flex;
+  flex-direction: column;
+}
+label{
+  margin: 0 0 5px 0;
+  font-Weight: bold;
+  font-size: 1.2rem;
+}
+input{
+  height: 30px;
+  font-size: 1.2rem;
+}
+.form-button{
+  width:100px;
+  margin: 10px auto;
+}
+.FriendsDataContainer{
+  margin: 0 150px;
+}
+.FriendsContainer{
+  margin: 10px 0;
+}
+.delete-button {
+  height:30px;
+  width: 80px;
+  
+}
+.FriendContainer{
+  border: 1px solid black;
+  padding : 0 50px;
+  margin: 10px 0;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.errorMessage-friendForm{
+  margin: 15px 0;
+  text-align: center;
+  font-Weight: bold;
+  font-size: 1.5rem;
+  color:red;
+  
+}
